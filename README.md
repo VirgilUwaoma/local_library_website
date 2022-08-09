@@ -1,1 +1,3 @@
-# local_library_website
+# Local library website
+
+Building a local library website using the NodeJs's Express framework and MongoDB
