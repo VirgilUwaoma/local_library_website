@@ -4,6 +4,8 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+const compression = require("compression");
+const helmet = require("helmet");
 
 var mongoDB =
   "mongodb+srv://Virgil:virgxl@cluster0.vgnkuow.mongodb.net/local_library?retryWrites=true&w=majority";
@@ -21,6 +23,8 @@ var app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
+app.use(compression());
+app.use(helmet());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
